@@ -2,6 +2,7 @@ package main
 
 import (
 	"Notification/entities"
+	"Notification/externalServices"
 	"Notification/services"
 )
 
@@ -14,6 +15,6 @@ func main() {
 		true,
 	}
 
-	orderService := services.NewOrderService()
+	orderService := services.NewOrderService(externalServices.NewSMSService())
 	orderService.CreateOrder(order)
 }

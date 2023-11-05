@@ -1,15 +1,14 @@
 package externalServices
 
 import (
-	"Notification/entities"
 	"fmt"
 )
 
 type SMSService struct {
 }
 
-func (sms *SMSService) SendMessage(order *entities.Order) {
-	fmt.Printf("SMS sent :%v\n", order)
+func (sms *SMSService) SendNotification(receiver string, message string) {
+	fmt.Printf("SMS sent to:%s message:%s\n", receiver, message)
 }
 
 func NewSMSService() *SMSService {
